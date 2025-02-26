@@ -1,0 +1,22 @@
+configuration{
+    modi : "run,drun,window";
+    icon-theme: "Oranchelo";
+    show-icons: true;
+    terminal: "kitty";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: true;
+    hide-scrollbar: true;
+    display-drun: "Drun";
+    display-run: "Run";
+    display-window: "Window";
+    sidebar-mode: true;
+
+    kb-move-char-forward:"";
+    kb-move-char-back:"";
+
+    kb-mode-next: "Right";
+    kb-mode-previous: "Left";
+}
+
+@theme "catppuccin-mocha"

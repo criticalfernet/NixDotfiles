@@ -1,0 +1,58 @@
+# Console title
+right_format = """$cmd_duration"""
+continuation_prompt = "[❱❱❱ ](cyan)"
+# Path (Directory Segment)
+[directory]
+style = "blue"
+format = "[$path]($style)[$read_only]($read_only_style)"
+truncation_length = 3
+truncation_symbol = '.../'
+truncate_to_repo = false # Starship doesn't use trailing_slash but can prevent truncation.
+
+# Git Segment
+[git_branch]
+style = "dimmed" 
+symbol = ''
+format = " [$symbol$branch]($style)"
+ignore_branches = ['HEAD']
+
+[git_status]
+style = "dimmed"
+format = '([\[$all_status$ahead_behind\]]($style) )' 
+conflicted = "="
+staged = "@"
+modified = "*"
+untracked = "+"
+ahead = "⇡"
+behind = "⇣"
+
+[git_commit]
+commit_hash_length = 6
+only_detached = true
+style = 'green'
+format = ' [#$hash]($style)' 
+
+# Execution Time Segment
+[cmd_duration]
+min_time = 1000 # Only show for commands taking over 1000ms
+format = "  [$duration]($style)"
+style = "yellow"
+
+# Prompt Symbol (Character)
+[character]
+success_symbol = "[❱ ](green)"
+error_symbol = "[❱ ](red)"
+
+
+[python]
+disabled=true
+[c]
+disabled=true
+[nodejs]
+disabled=true
+[rust]
+disabled=true
+[package]
+disabled=true
+[lua]
+disabled=true
