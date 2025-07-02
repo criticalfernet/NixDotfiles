@@ -3,7 +3,6 @@ local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabl
 
 local config = wezterm.config_builder()
 
-
 config.initial_cols = 300
 config.initial_rows = 100
 
@@ -39,10 +38,34 @@ tabline.setup({
 		},
 	},
 	sections = {
+		tabline_a = {},
 		tabline_b = {},
 		tabline_x = {},
 		tabline_y = {},
-		tabline_z = { {'workspace',icons_enabled = false} }
+		tabline_z = {
+			{
+				'workspace',
+				icons_enabled = false
+			}
+		}
+	},
+})
+
+tabline.set_theme({
+	normal_mode = {
+		z = { bg = '#89b4fa' }
+	},
+	copy_mode = {
+		z = { bg = '#89b4fa' }
+	},
+	search_mode = {
+		z = { bg = '#89b4fa' }
+	},
+	window_mode = {
+		z = { bg = '#89b4fa' }
+	},
+	tab = {
+		active = { fg = '#89b4fa'},
 	}
 })
 

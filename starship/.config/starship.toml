@@ -1,0 +1,61 @@
+right_format = """$cmd_duration"""
+#continuation_prompt = "[❱❱❱ ](green)"
+format = """ $python\
+	$directory\
+	$git_branch\
+	$git_commit\
+	$git_status\
+	$line_break \
+	$character\
+	$nix_shell """
+
+
+[directory]
+style = "blue"
+read_only_style = "blue"
+read_only = " "
+format = "[$path]($style)[$read_only]($read_only_style)"
+truncation_length = 3
+truncation_symbol = '.../'
+truncate_to_repo = false 
+
+# Git Segment
+[git_branch]
+style = "dimmed" 
+symbol = ''
+format = " [$symbol$branch]($style)"
+ignore_branches = ['HEAD']
+
+[git_status]
+style = "dimmed"
+format = '([\[$all_status$ahead_behind\]]($style) )' 
+conflicted = "="
+staged = "@"
+modified = "*"
+untracked = "+"
+ahead = "⇡"
+behind = "⇣"
+
+[git_commit]
+commit_hash_length = 6
+only_detached = true
+style = 'green'
+format = ' [#$hash]($style)' 
+
+[cmd_duration]
+min_time = 500 
+format = "  [$duration]($style)"
+style = "yellow"
+
+[character]
+format = '$symbol'
+success_symbol = "[❱](green)"
+error_symbol = "[❱](red)"
+
+
+[nix_shell]
+format = "[❱](bold blue)"
+
+[python]
+format = '[(\($virtualenv\)) ](yellow bold)'
+

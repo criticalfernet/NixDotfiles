@@ -3,7 +3,8 @@ if status is-interactive
 	set PATH $PATH $HOME/.cargo/bin
 	set -g EDITOR nvim
 
-	zoxide init --cmd cd fish| source
+	zoxide init --cmd cd fish | source
+	starship init fish | source
 
 	alias nv nvim
 	alias inv 'nvim $(find $HOME -type f | fzf --preview "bat {} --color=always")'

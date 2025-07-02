@@ -16,7 +16,7 @@ return {
 					lualine_b = {},
 					lualine_c = {{
 						'tabs',
-						mode = 1
+						mode = 2
 					}},
 					lualine_x = {},
 					lualine_y = {},
