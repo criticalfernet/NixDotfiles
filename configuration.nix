@@ -155,6 +155,7 @@
 		cmatrix
 		cmus
 		discord
+		docker
 		eza
 		fastfetch
 		ffmpeg
@@ -176,6 +177,7 @@
 		#gnomeExtensions.switcher
 		gnomeExtensions.tactile
 		gnomeExtensions.spotify-tray
+		gnomeExtensions.user-themes
 		gnome-themes-extra
 		gruvbox-dark-gtk
 		gruvbox-dark-icons-gtk
@@ -194,7 +196,7 @@
 		lshw
 		mesa-demos
 		neovim
-		nodejs_23
+		nodejs_24
 		obsidian
 		ollama
 		openvpn
@@ -229,8 +231,7 @@
 	  noto-fonts
 	  noto-fonts-cjk-sans
 	  noto-fonts-emoji
-		(nerdfonts.override { fonts = ["FiraCode" "DroidSansMono" "JetBrainsMono"]; })
-	];
+	] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
 	environment.sessionVariables = {
 		#STEAM_EXTRA_COMPAT_TOOLS_PATHS = 
@@ -265,7 +266,7 @@
   # networking.firewall.enable = false;
 
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "24.11";
+  system.stateVersion = "25.05";
 
 }
 
