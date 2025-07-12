@@ -1,0 +1,15 @@
+theme = GruvboxDark
+background-opacity = 0.97
+font-family = "JetBrainsMono Nerd Font"
+font-size = 14
+window-decoration = none
+window-padding-x = 0
+window-padding-y = 0
+window-subtitle = false
+maximize
+keybind = clear
+keybind = ctrl+shift+v=paste_from_clipboard
+keybind = ctrl+shift+comma=reload_config
+keybind = ctrl+shift+c=copy_to_clipboard
+keybind = ctrl+shift+i=inspector:toggle
+keybind = ctrl+shift+n=new_window

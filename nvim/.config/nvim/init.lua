@@ -21,6 +21,7 @@ vim.keymap.set('v','<leader>d','\"_d')
 vim.keymap.set('n','<leader>y','\"+y')
 vim.keymap.set('v','<leader>y','\"+y')
 vim.keymap.set('n','<leader>s',":%s/<C-r><C-w>/<C-r><C-w>/g<Left><Left><Left>")
+vim.keymap.set('n','<leader>n',":Ex<cr>")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then

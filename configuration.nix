@@ -11,7 +11,7 @@
 
 	boot = {
 		initrd.kernelModules = [ "nvidia" "i915" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
-		kernelParams = [ "nvidia-drm.fbdev=1" ];
+		kernelParams = [ "nvidia-drm.modeset=1" ];
 	};
 
   networking.hostName = "nixos"; 
@@ -65,6 +65,8 @@
 
   nixpkgs.config.allowUnfree = true;
 
+	virtualisation.docker.enable = true;
+
    users.users.critfer = {
    	shell = pkgs.fish;
      isNormalUser = true;
@@ -84,7 +86,7 @@
 	programs.gamemode.enable = true;
 
 
-	services.xserver.videoDrivers = ["nvidia"];
+	services.xserver.videoDrivers = ["nvidia" "modesetting"];
 
   hardware.nvidia = {
     modesetting.enable = true;
@@ -141,7 +143,6 @@
 
   environment.systemPackages = with pkgs; [
 		adwaita-icon-theme
-		albert
 		amberol
 		bat
 		blender
@@ -158,6 +159,7 @@
 		docker
 		eza
 		fastfetch
+		fd
 		ffmpeg
 		figlet
 		firefox
@@ -169,6 +171,7 @@
 		gcc
 		gdb
 		ghidra-bin
+		ghostty
 		git
 		gitui
 		gnome-tweaks
@@ -184,9 +187,6 @@
 		gtop
 		#htop
 		hyperfine
-		hypridle
-		hyprlock
-		hyprpaper
 		jdk
 		jq
 		killall
@@ -213,14 +213,15 @@
 		starship
 		steam
 		stow
+		tmux
 		unzip
 		vim 
-		waybar
+		wezterm
 		wget
 		wiki-tui
 		wine64
 		xdg-utils
-		#yazi
+		yazi
 		zip
 		zoxide
 		zsh
@@ -249,14 +250,14 @@
 
   services.openssh.enable = true;
   services.blueman.enable = true;
-	services.flatpak.enable = true;
-	systemd.services.flatpak-repo = {
-    wantedBy = [ "multi-user.target" ];
-    path = [ pkgs.flatpak ];
-    script = ''
-      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    '';
-  };
+	#services.flatpak.enable = true;
+	#systemd.services.flatpak-repo = {
+  #  wantedBy = [ "multi-user.target" ];
+  #  path = [ pkgs.flatpak ];
+  #  script = ''
+  #    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+  #  '';
+  #};
 
 
   # Open ports in the firewall.

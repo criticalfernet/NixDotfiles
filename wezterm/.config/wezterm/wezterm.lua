@@ -1,7 +1,7 @@
 local wezterm = require 'wezterm'
 local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
 
-local config = wezterm.config_builder()
+local config = wezterm.config_builder() and wezterm.config_builder() or {}
 
 config.initial_cols = 300
 config.initial_rows = 100
@@ -20,7 +20,7 @@ config.enable_tab_bar = true
 --config.hide_tab_bar_if_only_one_tab = true
 --config.tab_bar_at_bottom = true
 config.tab_and_split_indices_are_zero_based = false
-config.window_decorations = "NONE"
+config.window_decorations = "RESIZE"
 
 config.window_padding = {
 	left = 0,

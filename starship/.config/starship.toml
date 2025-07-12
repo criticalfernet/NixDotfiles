@@ -1,5 +1,4 @@
 right_format = """$cmd_duration"""
-#continuation_prompt = "[❱❱❱ ](green)"
 format = """ $python\
 	$directory\
 	$git_branch\
@@ -8,7 +7,6 @@ format = """ $python\
 	$line_break \
 	$character\
 	$nix_shell """
-
 
 [directory]
 style = "blue"
@@ -19,7 +17,6 @@ truncation_length = 3
 truncation_symbol = '.../'
 truncate_to_repo = false 
 
-# Git Segment
 [git_branch]
 style = "dimmed" 
 symbol = ''
